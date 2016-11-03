@@ -4,11 +4,13 @@ import { CommonModule } from '@angular/common';
 import { Sidebar, SIDEBAR_POSITION } from './sidebar.component';
 import { CloseSidebar } from './close.directive';
 
+import { AsgSidebar } from './asg-sidebar.component';
+
 export { SIDEBAR_POSITION };
 
 @NgModule({
-  declarations: [Sidebar, CloseSidebar],
+  declarations: [Sidebar, CloseSidebar, AsgSidebar],
   imports: [CommonModule],
-  exports: [Sidebar, CloseSidebar]
+  exports: [Sidebar, CloseSidebar, AsgSidebar]
 })
 export class SidebarModule {}

@@ -5,10 +5,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { SidebarMenu } from './sidebar-menu';
 
 @Component({
-    selector: 'app-ng2a-sidebar',
-    templateUrl: './ng2a-sidebar.component.html',
+    selector: 'asg-sidebar',
+    templateUrl: './asg-sidebar.component.html',
     providers: [SidebarService],
-    styleUrls: ['./ng2a-sidebar.component.css']
+    styleUrls: ['./asg-sidebar.component.css']
 })
 
 
