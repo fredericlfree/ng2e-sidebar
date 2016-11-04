@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
-import { Headers, RequestOptions } from '@angular/http';
+import { Headers } from '@angular/http';
 
 import { SidebarMenu } from './sidebar-menu';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/toPromise';
+import 'rxjs/add/operator/map';
 
 
 @Injectable()
@@ -22,17 +23,10 @@ export class SidebarService {
     }
 
     getSidebarMenu(id: number): Observable<SidebarMenu> {
-        console.log("getting sidebar: " + id);
+        console.log('getting sidebar: ' + id);
 
-        return this.http.get(this.sidebarUrl + "sidebar" + id + ".json")
-            .map((response: Response) => <SidebarMenu>response.json());
+        return this.http.get(this.sidebarUrl + 'sidebar' + id + '.json')
+            .map((response: Response) => response.json() as SidebarMenu);
         //    .do(data => console.log('All: ' + JSON.stringify(data)));
-    }
-
-
-    private handleError(error: Response) {
-        //   debugger;
-        console.error('error in sidebar service: ' + error);
-        return Observable.throw(error.json().error || 'Server error');
     }
 }
